@@ -14,7 +14,6 @@ class User(db.Model, SerializerMixin):
     image_url = db.Column(db.String)
     bio = db.Column(db.String)
 
-    #recipes = db.relationship('Recipe', backref='user')
     recipes = db.relationship('Recipe', back_populates='user')
 
     def __repr__(self):
